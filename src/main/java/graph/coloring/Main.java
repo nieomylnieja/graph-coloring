@@ -2,6 +2,9 @@ package graph.coloring;
 
 import graph.coloring.dimacs.Reader;
 
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 import java.util.logging.Logger;
 
 public class Main {
@@ -9,8 +12,11 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("graph coloring");
-
-        var res = Reader.read("fpsol2.i.1.col");
-        res.forEach((key, value) -> System.out.println(key + " " + value));
+        Map<Integer, List<Integer>> graph;
+        if (Objects.equals(args[0], "--debug")) {
+            graph = Reader.read("fpsol2.i.1.col");
+        } else {
+            graph = Reader.read();
+        }
     }
 }
