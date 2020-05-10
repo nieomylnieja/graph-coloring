@@ -14,11 +14,11 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("graph coloring");
         Map<Integer, List<Integer>> graph;
-        if (Objects.equals(args[0], "--debug")) {
+        if (args.length > 0 && Objects.equals(args[0], "--debug")) {
             graph = Reader.read("fpsol2.i.1.col");
         } else {
             graph = Reader.read();
         }
-        new Painter(graph);
+        new Painter(graph, 10);
     }
 }
