@@ -1,5 +1,6 @@
 package graph.coloring;
 
+import graph.coloring.dimacs.Painter;
 import graph.coloring.dimacs.Reader;
 
 import java.util.List;
@@ -18,5 +19,6 @@ public class Main {
         } else {
             graph = Reader.read();
         }
+        new Painter(graph);
     }
 }
